@@ -11,7 +11,14 @@
 |
 */
 
-
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    return "Cache is cleared";
+});
+Route::get('/config-cache', function() {
+    Artisan::call('config:cache');
+    return "Cache is cleared";
+});
 
 Auth::routes();
 Route::group(['middleware'    => 'auth'],function(){
