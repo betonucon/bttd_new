@@ -36,15 +36,7 @@ Route::group(['middleware'    => 'auth'],function(){
         
     });
 
-    Route::group(['prefix' => 'aplikasi'], function(){
-        Route::get('/', 'AplikasiController@index');
-        
-        Route::get('/hapus/{id}', 'AplikasiController@hapus');
-        Route::post('/edit/{id}', 'AplikasiController@edit');
-        Route::post('/simpan/faktur', 'AplikasiController@simpan');
-        
-        
-    });
+    
 
     Route::group(['prefix' => 'api'], function(){
         Route::get('/bttd/{bulan}/{tahun}', 'BttdController@api_index_bttd');
@@ -133,21 +125,7 @@ Route::group(['middleware'    => 'auth'],function(){
         Route::post('/simpan/', 'TagihanController@simpan');
     });
 
-    Route::group(['prefix' => 'cuti'], function(){
-        Route::get('/', 'CutiController@index');
-        Route::get('/admin', 'CutiController@index_admin');
-        Route::get('/validasi_all', 'CutiController@validasi_all');
-        Route::get('/tolak_validasi_all', 'CutiController@tolak_validasi_all');
-        Route::get('/acc', 'CutiController@index_acc');
-        Route::get('/persetujuan', 'CutiController@index_persetujuan');
-        Route::get('/persetujuan_selesai', 'CutiController@index_persetujuan_selesai');
-        Route::get('/hapus/{id}', 'CutiController@hapus');
-        Route::post('/edit/{id}', 'CutiController@edit');
-        Route::post('/simpan/', 'CutiController@simpan');
-        Route::post('/validasi_data/{id}', 'CutiController@validasi');
-        
-        
-    });
+    
     
     Route::group(['prefix' => 'user'], function(){
         Route::get('/', 'UserController@index');
